@@ -1,46 +1,75 @@
-.app-header {
+:host {
+  display: block;
+  background-color: transparent;
+  color: inherit;
+}
+.app-toolbar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  margin: 15px;
-  box-shadow: 0px 2px 8px #fff;
-  border-radius: 5px;
-}
-.leftContent,
-.middleContent,
-.rightContent {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 0 16px;
+  color: white;
+  background-color: orangered;
+
 }
-.logo img {
-  width: 100px;
+
+.toolbar-section {
+  display: flex;
+  align-items: center;
+  padding: 8px;
 }
-#title {
-  font-size: 30px;
-  font-weight: bold;
+
+/* Left section: Logo + Title */
+.left .logo {
+  height: 50px;
+  width: auto;
+  margin-right: 10px;
 }
-#title::first-letter {
-  font-size: 50px;
+
+.left .title {
+  font-size: 1.4rem;
+  font-weight: 600;
 }
-#tracker {
-  color: orangered;
-  font-weight: 200;
-  font-size: 30px;
-}
-#tracker::first-letter {
-  font-size: 50px;
-  font-weight: bold;
-  letter-spacing: -6px;
-}
-.middleContent {
+ .title::first-letter{
+  font-size: 2rem;
+  color: #333
+ }
+/* Center section */
+.center {
+  flex: 1;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 4px;
 }
-.rightContent {
-  margin-right: 20px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
+
+/* Right section */
+.right {
+  justify-content: flex-end;
+
 }
-.rightContent span {
-  color: orangered;
+
+.right .login-link{
+ text-transform: uppercase;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .app-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .toolbar-section {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .left,
+  .center,
+  .right {
+    margin: 5px 0;
+  }
 }
