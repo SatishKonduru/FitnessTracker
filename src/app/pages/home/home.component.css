@@ -1,0 +1,45 @@
+.home-page {
+  width: 900px;
+  height: 100vh;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leftContent {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  width: 45%;
+  margin-top: -100px;
+}
+.tagline {
+  font-weight: 600;
+  letter-spacing: 5px;
+  /* margin-top: -250px; */
+}
+.rightContent {
+  width: 70%;
+}
+.rightContent img {
+  width: 100%;
+  padding-left: 100px;
+}
+
+.caption {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+#strong {
+  font-size: 50px;
+  color: orangered;
+}
+#training {
+  font-size: 50px;
+  font-weight: bolder;
+  letter-spacing: 5px;
+}

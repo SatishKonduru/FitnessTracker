@@ -1,0 +1,46 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+  box-shadow: 0px 2px 8px #fff;
+  border-radius: 5px;
+}
+.leftContent,
+.middleContent,
+.rightContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo img {
+  width: 100px;
+}
+#title {
+  font-size: 30px;
+  font-weight: bold;
+}
+#title::first-letter {
+  font-size: 50px;
+}
+#tracker {
+  color: orangered;
+  font-weight: 200;
+  font-size: 30px;
+}
+#tracker::first-letter {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: -6px;
+}
+.middleContent {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.rightContent {
+  margin-right: 20px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.rightContent span {
+  color: orangered;
+}
