@@ -1,15 +1,24 @@
-<mat-toolbar  class="app-toolbar">
-  <div class="toolbar-section left">
-    <img src="assets/img/logo.png" alt="Logo" class="logo" />
-    <span class="title">Fitness</span>
-    <span class="title">Tracker</span>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger px-3">
+  <div class="container-fluid d-flex justify-content-between align-items-center w-100">
 
-  <div class="toolbar-section center">
-    <span class="nav-item" [routerLink]="">Workouts</span>
-  </div>
+    <!-- Left: Logo + Title -->
+    <div class="d-flex align-items-center gap-2">
+      <img src="assets/img/logo.png" alt="Logo" class="logo" />
+      <div class="d-flex flex-row">
+        <span class="title mb-0">Fitness</span>
+        <span class="title mb-0">Tracker</span>
+      </div>
+    </div>
 
-  <div class="toolbar-section right">
-    <a mat-stroked-button class="login-link">Login</a>
+    <!-- Center: Nav item -->
+    <div class="d-none d-lg-flex justify-content-center flex-grow-1">
+      <a [routerLink]="" class="nav-link text-white text-uppercase fw-medium nav-item">Workouts</a>
+    </div>
+
+    <!-- Right: Login Button -->
+    <div>
+      <a class="btn btn-outline-light text-uppercase">Login</a>
+    </div>
+
   </div>
-</mat-toolbar>
+</nav>
