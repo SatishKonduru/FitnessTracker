@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  background-color: transparent;
+  color: inherit;
+}
+.register-img {
+  width: 300px;
+  /* height: 180px; */
+  border-radius: 12px;
+  object-fit: cover;
+}
+.logo-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover; /* optional: crop to fill nicely */
+  background-color: orangered;
+}
+@media (max-width: 768px) {
+  .col-md-6 {
+    /* overflow-y: auto; */
+    max-height: 100vh;
+    order: 1;
+  }
+  .register-from {
+    order: 0;
+  }
+}

@@ -5,12 +5,14 @@
 .logo {
   height: 50px;
   width: auto;
+  cursor: pointer;
 }
 
 .title {
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.1;
+  cursor: pointer;
 }
 
 .title::first-letter {

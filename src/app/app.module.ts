@@ -8,9 +8,21 @@ import { HeaderComponent } from './pages/header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './modules/angular-material/angular-material.module';
 import { FormsModule } from '@angular/forms';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { WorkoutsComponent } from './workouts/workouts/workouts.component';
+import { NewWorkoutComponent } from './workouts/new-workout/new-workout.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    SignupComponent,
+    LoginComponent,
+    WorkoutsComponent,
+    NewWorkoutComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

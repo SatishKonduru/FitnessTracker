@@ -8,3 +8,14 @@
 .letter-spacing {
   letter-spacing: 5px;
 }
+.btn-hover-effect {
+  transition: all 0.3s ease;
+  /* transform: scale(1); */
+}
+
+.btn-hover-effect:hover {
+  /* transform: scale(1.05); */
+
+  color: orangered !important;
+  background-color: #222 !important;
+}

@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger px-3">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-danger px-3">
   <div class="container-fluid d-flex justify-content-between align-items-center w-100">
 
-    <!-- Left: Logo + Title -->
+
     <div class="d-flex align-items-center gap-2">
       <img src="assets/img/logo.png" alt="Logo" class="logo" />
       <div class="d-flex flex-row">
@@ -10,15 +10,36 @@
       </div>
     </div>
 
-    <!-- Center: Nav item -->
+
     <div class="d-none d-lg-flex justify-content-center flex-grow-1">
-      <a [routerLink]="" class="nav-link text-white text-uppercase fw-medium nav-item">Workouts</a>
+      <a routerLink="" class="nav-link text-white text-uppercase fw-medium nav-item">Workouts</a>
     </div>
 
-    <!-- Right: Login Button -->
     <div>
       <a class="btn btn-outline-light text-uppercase">Login</a>
     </div>
 
   </div>
-</nav>
+</nav> -->
+<mat-toolbar color="warn" class="px-3 py-2 d-flex  justify-content-between align-items-center w-100">
+
+  <!-- Left: Logo + Title -->
+  <div class="d-flex align-items-center gap-2 " routerLink="/home">
+    <img src="assets/img/logo.png" alt="Logo" class="logo" />
+    <div class="d-flex flex-row">
+      <span class="title mb-0 me-1">Fitness</span>
+      <span class="title mb-0">Tracker</span>
+    </div>
+  </div>
+
+  <!-- Center: Nav item (visible on lg and up) -->
+  <div class="d-none d-lg-flex justify-content-center flex-grow-1">
+    <a [routerLink]="'/workouts'" class="nav-link text-white text-uppercase fw-medium">Workouts</a>
+  </div>
+
+  <!-- Right: Login Button -->
+  <div >
+    <button mat-stroked-button color="accent" class="text-uppercase" routerLink="/login">Login</button>
+  </div>
+
+</mat-toolbar>
