@@ -9,16 +9,9 @@
   border-radius: 12px;
   object-fit: cover;
 }
-.logo-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 12px;
-  object-fit: cover; /* optional: crop to fill nicely */
-  background-color: orangered;
-}
+
 @media (max-width: 768px) {
   .col-md-6 {
-    overflow-y: auto;
     max-height: 100vh;
     order: 1;
   }
