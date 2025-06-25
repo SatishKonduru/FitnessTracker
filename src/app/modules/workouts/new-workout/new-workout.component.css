@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  background-color: transparent;
+  color: inherit;
+}
+.workouts-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 100px;
+}
+
+mat-card img{
+  width: 200px;
+  object-fit: cover;
+}
+.workout-card {
+  width: 300px;
+  flex-grow: 1;
+}

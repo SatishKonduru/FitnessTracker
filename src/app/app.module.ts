@@ -10,8 +10,7 @@ import { AngularMaterialModule } from './modules/angular-material/angular-materi
 import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
-import { WorkoutsComponent } from './workouts/workouts/workouts.component';
-import { NewWorkoutComponent } from './workouts/new-workout/new-workout.component';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +19,6 @@ import { NewWorkoutComponent } from './workouts/new-workout/new-workout.componen
     HeaderComponent,
     SignupComponent,
     LoginComponent,
-    WorkoutsComponent,
-    NewWorkoutComponent,
   ],
   imports: [
     BrowserModule,

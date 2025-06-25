@@ -1,1 +1,23 @@
-<p>new-workout works!</p>
+<div class="container">
+  <h4 class="text-center">Select your choice</h4>
+</div>
+<div class="workouts-list">
+  <mat-card *ngFor="let workout of workouts" class="workout-card border p-4">
+    <mat-card-header class="d-flex justify-content-between align-items-center">
+      <mat-card-title class="text-info">{{ workout.title }}</mat-card-title>
+      <mat-card-subtitle class="text-danger">{{ workout.duration }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img *ngIf="workout.imageUrl" mat-card-image [src]="workout.imageUrl" alt="{{ workout.title }}">
+
+    <mat-card-content>
+      <p>{{ workout.description }}</p>
+    </mat-card-content>
+
+    <mat-card-actions class="d-flex justify-content-center align-items-center" >
+      <button mat-flat-button color="primary" >Start</button>
+
+    </mat-card-actions>
+  </mat-card>
+</div>
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni aperiam eius illum est amet blanditiis assumenda? Nemo qui voluptates consequatur possimus sed quia eos deleniti suscipit quod. Optio, non obcaecati.
