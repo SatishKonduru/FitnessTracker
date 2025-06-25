@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  background-color: transparent;
+  color: inherit;
+}
+.workouts-container {
+  height: 100vh;
+}
+.sidenav {
+  width: 250px;
+}

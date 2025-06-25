@@ -1,0 +1,26 @@
+<mat-drawer-container class="container-fluid workouts-container">
+  <!-- Drawer Sidebar -->
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <!-- ✅ Navigate only (no toggle logic needed) -->
+    <button
+      mat-stroked-button
+      color="warn"
+      class="w-100"
+      [routerLink]="['new']"
+      (click)="drawer.close()"
+    >
+      NEW
+    </button>
+  </mat-drawer>
+
+  <!-- Main Content -->
+  <div class="sidenav-content">
+    <!-- ✅ Toggle the drawer open/close with icon only -->
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon fontIcon="menu"></mat-icon>
+    </button>
+
+    <!-- Routed Views Appear Here -->
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>

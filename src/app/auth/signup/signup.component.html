@@ -81,8 +81,11 @@
             </mat-form-field>
 
          </p>
+         <p>
+              <mat-checkbox ngModel name="agree" required color="warn">Agree to Terms and Conditions.</mat-checkbox>
+          </p>
 
-      <button mat-stroked-button color="warn" type="submit" class="mt-4">Register</button>
+      <button mat-stroked-button color="warn" type="submit" class="mt-4" [disabled]="registerForm.invalid">Register</button>
       </form>
 
     </div>

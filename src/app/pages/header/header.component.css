@@ -1,6 +1,9 @@
 :host {
   display: block;
+  background-color: transparent;
+  color: inherit;
 }
+
 
 .logo {
   height: 50px;

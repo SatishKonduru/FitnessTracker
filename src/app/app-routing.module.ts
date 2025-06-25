@@ -23,10 +23,7 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent,
   },
-  {
-    path: 'workouts',
-    component: WorkoutsComponent,
-  },
+  { path: 'workouts', loadChildren: () => import('./modules/workouts/workouts.module').then(m => m.WorkoutsModule) },
 ];
 
 @NgModule({
