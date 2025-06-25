@@ -3,7 +3,7 @@ import { Workout } from '../models/workout.model';
 export const WORKOUTS: Workout[] = [
   {
     id: 1,
-    title: 'Morning Cardio',
+    title: 'Morning Cardio ',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
     duration: '30 mins',
     imageUrl: 'assets/workouts/1.gif',

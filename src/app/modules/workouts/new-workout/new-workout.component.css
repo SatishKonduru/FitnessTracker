@@ -11,9 +11,10 @@
   margin-bottom: 100px;
 }
 
-mat-card img{
-  width: 200px;
+.workout-img{
+  width: 50%;
   object-fit: cover;
+  align-self: center;
 }
 .workout-card {
   width: 300px;
