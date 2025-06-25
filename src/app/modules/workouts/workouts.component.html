@@ -1,4 +1,5 @@
-<mat-drawer-container class="container-fluid workouts-container">
+<div class="container-fluid">
+<mat-drawer-container class="workouts-container">
   <!-- Drawer Sidebar -->
   <mat-drawer #drawer class="sidenav" mode="side">
     <!-- ✅ Navigate only (no toggle logic needed) -->
@@ -19,8 +20,9 @@
     <button mat-icon-button (click)="drawer.toggle()">
       <mat-icon fontIcon="menu"></mat-icon>
     </button>
-
     <!-- Routed Views Appear Here -->
     <router-outlet></router-outlet>
   </div>
 </mat-drawer-container>
+</div>
+
