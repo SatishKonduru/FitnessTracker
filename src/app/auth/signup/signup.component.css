@@ -4,10 +4,9 @@
   color: inherit;
 }
 .register-img {
-  width: 800px;
-  /* height: 180px; */
-  border-radius: 12px;
-  object-fit: cover;
+  width: 820px;
+
+  /* object-fit: cover; */
 }
 
 @media (max-width: 768px) {

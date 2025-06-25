@@ -6,7 +6,7 @@
 .img-section {
   width: 300px;
   /* height: 180px; */
-  border-radius: 12px;
+  /* border-radius: 12px; */
   object-fit: cover;
 }
 
@@ -15,7 +15,7 @@
     max-height: 100vh;
     order: 1;
   }
-  .register-from {
+  .login-from {
     order: 0;
   }
 }
