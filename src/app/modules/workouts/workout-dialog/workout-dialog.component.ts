@@ -22,7 +22,7 @@ export class WorkoutDialogComponent {
   counter = 0;
   isRunning = false;
   interval: any;
-  durationInSeconds = 2; // You can dynamically map this from data.duration
+  durationInSeconds = 10; // You can dynamically map this from data.duration
   audio = new Audio('assets/sounds/alert.mp3');
   progress = 0;
 
@@ -39,7 +39,7 @@ export class WorkoutDialogComponent {
       if (this.counter >= this.durationInSeconds) {
         this.stopTimer();
 
-        this.audio.loop = false;
+        // this.audio.loop = false;
         this.audio.play();
 
         const alertRef = this.dialog.open(NotificationDialogComponent, {
