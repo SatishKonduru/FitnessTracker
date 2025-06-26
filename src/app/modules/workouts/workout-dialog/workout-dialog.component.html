@@ -1,1 +1,36 @@
-<p>workout-dialog works!</p>
+<h6 mat-dialog-title>{{ data.title }}</h6>
+
+<mat-dialog-content>
+  <div class="d-flex align-items-center gap-4">
+    <!-- Image -->
+    <img
+      *ngIf="data.imageUrl"
+      [src]="data.imageUrl"
+      alt="{{ data.title }}"
+      class="img-fluid object-fit-contain border border-warning rounded"
+      style="height: 200px"
+
+    />
+
+    <!-- Timer and Controls -->
+    <div class="d-flex flex-column align-items-center gap-2">
+      <h4>{{ counter }}s</h4>
+      <mat-progress-bar
+        [value]="progress"
+        mode="determinate"
+        color="warn"
+        style="width: 150px;"
+      ></mat-progress-bar>
+
+      <div class="d-flex gap-2 mt-2">
+        <button mat-flat-button color="primary" (click)="start()" [disabled]="isRunning">Start</button>
+        <button mat-flat-button color="accent" (click)="pause()" [disabled]="!isRunning">Pause</button>
+        <button mat-flat-button color="warn" (click)="stop()">Stop</button>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-stroked-button color="warn" mat-dialog-close>Close</button>
+</mat-dialog-actions>

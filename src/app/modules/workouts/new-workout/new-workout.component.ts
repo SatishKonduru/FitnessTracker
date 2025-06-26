@@ -3,6 +3,8 @@ import { WORKOUTS } from 'src/app/mock-data/workouts.data';
 import { Workout } from 'src/app/models/workout.model';
 import { WorkoutsService } from '../services/workouts.service';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { WorkoutDialogComponent } from '../workout-dialog/workout-dialog.component';
 
 @Component({
   selector: 'app-new-workout',
@@ -20,7 +22,10 @@ export class NewWorkoutComponent {
   totalWorkouts = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private workoutService: WorkoutsService) {}
+  constructor(
+    private workoutService: WorkoutsService,
+    private dialog: MatDialog
+  ) {}
 
   // ngOnInit(): void {
   //   this.workoutService.getWorkouts().subscribe((data) => {
@@ -61,5 +66,13 @@ export class NewWorkoutComponent {
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
     this.applyPagination();
+  }
+
+  openWorkoutDialog(workout: Workout): void {
+    this.dialog.open(WorkoutDialogComponent, {
+      width: '500px',
+      disableClose: true,
+      data: workout,
+    });
   }
 }
