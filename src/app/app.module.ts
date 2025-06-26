@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotificationDialogComponent } from './shared/notification-dialog/notification-dialog.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     SignupComponent,
     LoginComponent,
+    NotificationDialogComponent,
   ],
   imports: [
     BrowserModule,
