@@ -1,10 +1,10 @@
 <div mat-dialog-title class="d-flex justify-content-around align-items-center">
   <mat-toolbar>
-  <mat-icon *ngIf="data.type === 'success'"  class="text-success">check_circle</mat-icon>
-  <mat-icon *ngIf="data.type === 'error'" color="warn">error</mat-icon>
-  <mat-icon *ngIf="!data.type || data.type === 'info'" color="accent">info</mat-icon>
+      <mat-icon *ngIf="data.type === 'success'"  class="text-success" fontIcon ="check"></mat-icon>
+      <mat-icon *ngIf="data.type === 'error'" class="text-danger" fontIcon="error"></mat-icon>
+      <mat-icon *ngIf="!data.type || data.type === 'info'" class="text-info" fontIcon="info"></mat-icon>
   <span class="ms-2">{{ data.message }}</span>
-  </mat-toolbar>
+  </mat-toolbar> 
 </div>
 
 <mat-dialog-actions align="end">
