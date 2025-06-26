@@ -1,14 +1,19 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { WORKOUTS } from 'src/app/mock-data/workouts.data';
+import { map, Observable, of } from 'rxjs';
 import { Workout } from 'src/app/models/workout.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class WorkoutsService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+  // getWorkouts(): Observable<Workout[]> {
+  //   return of(WORKOUTS); // simulate HTTP call
+  // }
+
+  private Url = 'assets/data/workouts.json';
   getWorkouts(): Observable<Workout[]> {
-    return of(WORKOUTS); // simulate HTTP call
+    return this.http.get<Workout[]>(this.Url);
   }
 }

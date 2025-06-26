@@ -51,7 +51,7 @@
     </div>
     <!-- 📄 Pagination -->
 <mat-paginator
-    [length]="filteredWorkouts.length"
+    [length]="totalWorkouts"
     [pageSize]="pageSize"
     [pageSizeOptions]="[3, 5, 10]"
     (page)="onPageChange($event)"

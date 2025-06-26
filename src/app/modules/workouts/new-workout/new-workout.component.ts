@@ -15,16 +15,23 @@ export class NewWorkoutComponent {
   paginatedWorkouts: Workout[] = [];
 
   searchTerm = '';
-  pageSize = 5;
+  pageSize = 3;
   pageIndex = 0;
-
+  totalWorkouts = 0;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(private workoutService: WorkoutsService) {}
 
+  // ngOnInit(): void {
+  //   this.workoutService.getWorkouts().subscribe((data) => {
+  //     this.workouts = data;
+  //     this.applyPagination();
+  //   });
+  // }
   ngOnInit(): void {
     this.workoutService.getWorkouts().subscribe((data) => {
       this.workouts = data;
+      this.totalWorkouts = data.length;
       this.applyPagination();
     });
   }
@@ -37,9 +44,11 @@ export class NewWorkoutComponent {
 
   applyPagination(): void {
     const filtered = this.filteredWorkouts;
+    this.totalWorkouts = filtered.length;
     const start = this.pageIndex * this.pageSize;
     const end = start + this.pageSize;
     this.paginatedWorkouts = filtered.slice(start, end);
+    console.log('Records: ', this.paginatedWorkouts);
   }
 
   onSearchChange(): void {
