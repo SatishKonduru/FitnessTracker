@@ -10,6 +10,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 const materailComponents = [
   MatToolbarModule,
@@ -22,6 +23,7 @@ const materailComponents = [
   MatSidenavModule,
   MatIconModule,
   MatCardModule,
+  MatPaginatorModule,
 ];
 @NgModule({
   imports: [materailComponents],

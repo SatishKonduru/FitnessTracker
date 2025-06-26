@@ -1,23 +1,69 @@
 <div class="container">
-  <h4 class="text-center">Choose your Activity</h4>
+  <h4 class="text-center mb-3">Choose your Activity</h4>
 
-<div class="workouts-list">
-  <mat-card *ngFor="let workout of workouts" class="workout-card border p-1">
-    <mat-card-header>
-      <mat-card-title class="text-info">{{ workout.title }}</mat-card-title>
-      <mat-card-subtitle class="text-danger">{{ workout.duration }}</mat-card-subtitle>
-    </mat-card-header>
+  <!-- 🔍 Search Input -->
+   <div class="d-flex justify-content-end">
+ <mat-form-field appearance="outline" class="w-50 mb-4 ">
+    <mat-label>Search Workouts</mat-label>
+    <input
+      matInput
+      [(ngModel)]="searchTerm"
+      (ngModelChange)="onSearchChange()"
+      placeholder="Type to filter workouts"
+    />
+  </mat-form-field>
+   </div>
 
-    <img *ngIf="workout.imageUrl" mat-card-image class="workout-img" [src]="workout.imageUrl" alt="{{ workout.title }}">
 
-    <mat-card-content>
-      <p>{{ workout.description }}</p>
-    </mat-card-content>
+  <!-- 🏋️‍♂️ Workouts List -->
+  <div class="workouts-list">
+    <mat-card
+      *ngFor="let workout of paginatedWorkouts"
+      class="workout-card border p-2 mb-3"
+    >
+      <mat-card-header>
+        <mat-card-title class="text-info">{{ workout.title }}</mat-card-title>
+        <mat-card-subtitle class="text-white">{{
+          workout.duration
+        }}</mat-card-subtitle>
+      </mat-card-header>
 
-    <mat-card-actions class="d-flex justify-content-center align-items-center" >
-      <button mat-flat-button color="primary" >Start</button>
+      <img
+        *ngIf="workout.imageUrl"
+        mat-card-image
+        class="workout-img"
+        [src]="workout.imageUrl"
+        alt="{{ workout.title }}"
+      />
 
-    </mat-card-actions>
-  </mat-card>
+      <mat-card-content>
+        <p>{{ workout.description }}</p>
+      </mat-card-content>
+
+      <mat-card-actions class="d-flex justify-content-center">
+        <button mat-flat-button color="primary">Start</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- ❌ No Results Message -->
+    <div *ngIf="filteredWorkouts.length === 0" class="mt-4 text-white">
+      No workouts found for "{{ searchTerm }}"
+    </div>
+    <!-- 📄 Pagination -->
+<mat-paginator
+    [length]="filteredWorkouts.length"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[3, 5, 10]"
+    (page)="onPageChange($event)"
+    class="paginator"
+  >
+  </mat-paginator>
+  </div>
+
+
+
+
+
+
 </div>
-</div>
+
