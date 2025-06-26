@@ -4,8 +4,8 @@ import {
   MatDialog,
   MatDialogRef,
 } from '@angular/material/dialog';
-import { interval, Subscription } from 'rxjs';
 import { Workout } from 'src/app/models/workout.model';
+import { NotificationDialogComponent } from 'src/app/shared/notification-dialog/notification-dialog.component';
 
 @Component({
   selector: 'app-workout-dialog',
@@ -15,19 +15,22 @@ import { Workout } from 'src/app/models/workout.model';
 export class WorkoutDialogComponent {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: Workout,
-    private dialogRef: MatDialogRef<WorkoutDialogComponent>
+    private dialogRef: MatDialogRef<WorkoutDialogComponent>,
+    private dialog: MatDialog
   ) {}
 
   counter = 0;
   isRunning = false;
   interval: any;
-  durationInSeconds = 30; // You can dynamically map from data.duration
-  audio = new Audio('assets/sounds/alert.mp3'); // Replace with your actual file
+  durationInSeconds = 2; // You can dynamically map this from data.duration
+  audio = new Audio('assets/sounds/alert.mp3');
   progress = 0;
 
   start(): void {
     if (this.isRunning) return;
+
     this.isRunning = true;
+    this.counter = 0;
 
     this.interval = setInterval(() => {
       this.counter++;
@@ -35,20 +38,24 @@ export class WorkoutDialogComponent {
 
       if (this.counter >= this.durationInSeconds) {
         this.stopTimer();
+
+        this.audio.loop = false;
         this.audio.play();
-        setTimeout(() => {
-          const confirmClose = confirm(
-            'Great! Successfully done this workout!'
-          );
-          if (confirmClose) {
-            this.audio.pause();
-            this.audio.currentTime = 0;
-            this.dialogRef.close();
-          } else {
-            this.audio.pause();
-            this.audio.currentTime = 0;
-          }
-        }, 200);
+
+        const alertRef = this.dialog.open(NotificationDialogComponent, {
+          width: '500px',
+          data: {
+            message: 'Successfully done this workout!',
+            type: 'success',
+          },
+          disableClose: true,
+        });
+
+        alertRef.afterClosed().subscribe(() => {
+          this.audio.pause();
+          this.audio.currentTime = 0;
+          this.dialogRef.close();
+        });
       }
     }, 1000);
   }
