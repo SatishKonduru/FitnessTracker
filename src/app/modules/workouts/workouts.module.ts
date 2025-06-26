@@ -8,9 +8,16 @@ import { AngularMaterialModule } from '../angular-material/angular-material.modu
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 
+import { WorkoutDialogComponent } from './workout-dialog/workout-dialog.component';
+
 
 @NgModule({
-  declarations: [WorkoutsComponent, NewWorkoutComponent, DashboardComponent],
+  declarations: [
+    WorkoutsComponent,
+    NewWorkoutComponent,
+    DashboardComponent,
+    WorkoutDialogComponent,
+  ],
   imports: [
     CommonModule,
     WorkoutsRoutingModule,

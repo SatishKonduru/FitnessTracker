@@ -17,6 +17,7 @@ const routes: Routes = [
         path: 'new',
         component: NewWorkoutComponent,
       },
+
       // more routes can go here
     ],
   },
