@@ -15,6 +15,7 @@ import { NotificationDialogComponent } from './shared/notification-dialog/notifi
 import { environment } from 'src/environments/environment';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
     HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],
